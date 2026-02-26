@@ -2,25 +2,17 @@
 
 vanilla typescript project shell
 
-## Getting started
-
-```
-git clone https://github.com/ryanjmack/ts-vanilla
-cd ts-vanilla
-pnpm install
-pnpm dev
-```
-
 ## Usage
 
 ```
-pnpm dev           start dev server with HMR (output logged to vite.log, cleared on restart)
+pnpm dev           start dev server (output logged to vite.log, cleared on restart)
 pnpm build         production build with sourcemaps
-pnpm preview       serve the production build locally (localhost:4173)
+pnpm preview       serve the production build locally
+pnpm typecheck     type-check without emitting output
 pnpm lint          full project check: tsc, eslint, stylelint, prettier
+pnpm lint:fix      auto-fix eslint, stylelint, and prettier violations
 pnpm test          run tests once
 pnpm test:watch    run tests in watch mode
-pnpm format        auto-format all files
 ```
 
 **Note:** Node and pnpm versions are pinned. Use [fnm](https://github.com/Schniz/fnm) to manage Node and [corepack](https://nodejs.org/api/corepack.html) to manage pnpm

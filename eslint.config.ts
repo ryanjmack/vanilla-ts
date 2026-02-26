@@ -2,8 +2,9 @@ import eslint from '@eslint/js';
 import jsoncPlugin from 'eslint-plugin-jsonc';
 import prettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
+import {defineConfig} from 'eslint/config';
 
-export default tseslint.config(
+export default defineConfig(
   {
     files: ['**/*.ts'],
     extends: [eslint.configs.recommended, tseslint.configs.strictTypeChecked, tseslint.configs.stylisticTypeChecked],

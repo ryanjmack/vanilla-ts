@@ -36,9 +36,10 @@ public/      # static assets
 ## Scripts
 
 ```
-pnpm lint     # tsc + eslint (cached) + stylelint + prettier (authoritative)
-pnpm format   # auto-format everything
-pnpm test     # vitest run
+pnpm typecheck  # tsc --noEmit only, fast type-check without full lint
+pnpm lint       # tsc + eslint (cached) + stylelint + prettier (authoritative)
+pnpm format     # auto-format everything
+pnpm test       # vitest run
 ```
 
 See `package.json` for the full list.

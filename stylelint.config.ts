@@ -1,7 +1,9 @@
-export default {
+import type {Config} from 'stylelint';
+
+const config: Config = {
   extends: ['stylelint-config-standard', 'stylelint-config-css-modules'],
   rules: {
-    // stylelint-config-standard enforces kebab-case — CSS Modules uses camelCase
+    // stylelint-config-standard enforces kebab-case -- CSS Modules uses camelCase
     'selector-class-pattern': null,
 
     // grid-template shorthand is cryptic for multi-area layouts
@@ -12,3 +14,5 @@ export default {
     'import-notation': 'string',
   },
 };
+
+export default config;
