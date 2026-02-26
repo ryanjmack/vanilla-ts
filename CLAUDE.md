@@ -9,7 +9,11 @@
 - `utils/` is pure functions only: no DOM, no side effects, testable in isolation.
 - Co-locate tests: `foo.ts` and `foo.test.ts` in the same directory.
 - Use CSS Modules for component styles. `globals.css` is for truly global rules only.
-- `app/` is the shell. Wire things together there, put no logic there.
+
+## Local files
+
+`PLAN.md` — architecture details, key decisions, milestones.
+`TODO.md` — current goals and active work.
 
 ## Tooling
 
@@ -17,7 +21,7 @@ Conventions are enforced by the toolchain, not just documented here. TypeScript,
 
 ## Linting
 
-After every edit, run `pnpm lint`. It runs tsc + eslint + stylelint + prettier in one shot. lint-staged runs on staged files pre-commit, the full pipeline runs pre-push.
+After every edit, run `pnpm check`. Auto-fixes lint/format issues then type-checks. lint-staged runs on staged files pre-commit, the full pipeline runs pre-push.
 
 ## Git
 
@@ -36,9 +40,11 @@ public/      # static assets
 ## Scripts
 
 ```
-pnpm typecheck  # tsc --noEmit only, fast type-check without full lint
-pnpm lint       # tsc + eslint (cached) + stylelint + prettier (authoritative)
-pnpm format     # auto-format everything
+pnpm check      # lint + typecheck — run after every edit
+pnpm lint       # eslint --fix + stylelint --fix + prettier --write
+pnpm lint:check # tsc + eslint + stylelint + prettier --check (read-only, CI/hooks)
+pnpm typecheck  # tsc --noEmit only
+pnpm prettier   # prettier --write
 pnpm test       # vitest run
 ```
 
@@ -47,4 +53,3 @@ See `package.json` for the full list.
 ## Debug log
 
 `pnpm dev` writes dev server output to `vite.log`, cleared on each restart. Read it to diagnose runtime errors or HMR failures.
-

@@ -1,6 +1,6 @@
 # ts-vanilla
 
-vanilla typescript project shell
+opinionated vanilla typescript project shell
 
 ## Usage
 
@@ -8,9 +8,10 @@ vanilla typescript project shell
 pnpm dev           start dev server (output logged to vite.log, cleared on restart)
 pnpm build         production build with sourcemaps
 pnpm preview       serve the production build locally
+pnpm check         fix lint/format issues then type-check
+pnpm lint          auto-fix: eslint, stylelint, prettier
+pnpm lint:check    read-only check: tsc, eslint, stylelint, prettier
 pnpm typecheck     type-check without emitting output
-pnpm lint          full project check: tsc, eslint, stylelint, prettier
-pnpm lint:fix      auto-fix eslint, stylelint, and prettier violations
 pnpm test          run tests once
 pnpm test:watch    run tests in watch mode
 ```
@@ -38,6 +39,6 @@ GitHub Actions runs on every push and PR to `main`:
 lint -> test -> build
 ```
 
-`pnpm lint` is the same command you run locally, no separate CI-specific steps, no assumptions.
+`pnpm lint:check` is the read-only verify step — no auto-fixing in CI, just fail fast.
 
 Output is a static `dist/` folder, deploy anywhere that serves static files.
