@@ -5,51 +5,44 @@
 ## Rules
 
 - Fix all errors and warnings. Never suppress with `@ts-ignore`, `eslint-disable`, or `!` assertions. If a fix requires a decision you can't make alone, ask the user.
-- Pin exact dep versions (hermetic builds).
-- `utils/` is pure functions only: no DOM, no side effects, testable in isolation.
+- Pin exact dep versions.
 - Co-locate tests: `foo.ts` and `foo.test.ts` in the same directory.
-- Use CSS Modules for component styles. `globals.css` is for truly global rules only.
+- After every edit, run `pnpm fix`. Runs all formatters and type-checks.
+
+## Git
+
+Edit files in the working area only. Do not run `git add`, `git commit`, or touch the staging area. The user reviews, stages, and commits.
+
+## Tooling
+
+- Conventions are enforced by the toolchain. TypeScript, ESLint, Stylelint, Prettier, and commitlint are configured strictly.
+- Config files are authoritative.
+- Use CSS Modules for component styles.
+
+## Scripts
+
+```
+pnpm build          # production build
+pnpm dev            # start dev server (output logged to vite.log)
+pnpm fix            # run all formatters and type-check - run after every edit
+pnpm lint           # read-only verify: tsc, eslint, stylelint, prettier (CI/hooks)
+pnpm prettier       # prettier --write
+pnpm prettier:check # prettier --check
+pnpm preview        # serve production build locally
+pnpm test           # vitest run
+pnpm test:watch     # vitest watch mode
+pnpm typecheck      # tsc --noEmit only
+```
 
 ## Local files
 
 `PLAN.md` — architecture details, key decisions, milestones.
 `TODO.md` — current goals and active work.
 
-## Tooling
-
-Conventions are enforced by the toolchain, not just documented here. TypeScript, ESLint, Stylelint, Prettier, and commitlint are configured strictly — the pipeline fails on violations. Treat config files as authoritative.
-
-## Linting
-
-After every edit, run `pnpm check`. Auto-fixes lint/format issues then type-checks. lint-staged runs on staged files pre-commit, the full pipeline runs pre-push.
-
-## Git
-
-Edit files in the working area only. Do not run `git add`, `git commit`, or touch the staging area. The user reviews, stages, and commits.
-
-## Structure
-
-```
-src/
-  app/       # app shell
-  utils/     # pure functions + co-located tests
-  styles/    # globals.css, variables.css
-public/      # static assets
-```
-
-## Scripts
-
-```
-pnpm check      # lint + typecheck — run after every edit
-pnpm lint       # eslint --fix + stylelint --fix + prettier --write
-pnpm lint:check # tsc + eslint + stylelint + prettier --check (read-only, CI/hooks)
-pnpm typecheck  # tsc --noEmit only
-pnpm prettier   # prettier --write
-pnpm test       # vitest run
-```
-
-See `package.json` for the full list.
-
 ## Debug log
 
 `pnpm dev` writes dev server output to `vite.log`, cleared on each restart. Read it to diagnose runtime errors or HMR failures.
+
+## CI/CD
+
+- lint-staged runs on staged files pre-commit, full pipeline runs pre-push.

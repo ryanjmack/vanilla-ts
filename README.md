@@ -8,28 +8,27 @@ opinionated vanilla typescript project shell
 pnpm dev           start dev server (output logged to vite.log, cleared on restart)
 pnpm build         production build with sourcemaps
 pnpm preview       serve the production build locally
-pnpm check         fix lint/format issues then type-check
-pnpm lint          auto-fix: eslint, stylelint, prettier
-pnpm lint:check    read-only check: tsc, eslint, stylelint, prettier
+
+pnpm fix           run all formatters and type-check
+pnpm lint          read-only: tsc, eslint, stylelint, prettier
 pnpm typecheck     type-check without emitting output
+
 pnpm test          run tests once
 pnpm test:watch    run tests in watch mode
 ```
 
-**Note:** Node and pnpm versions are pinned. Use [fnm](https://github.com/Schniz/fnm) to manage Node and [corepack](https://nodejs.org/api/corepack.html) to manage pnpm
+Node and pnpm versions are pinned. I recommend [fnm](https://github.com/Schniz/fnm) and [corepack](https://nodejs.org/api/corepack.html).
 
 ## Stack
 
-- **Vite**: instant dev server via native ESM, esbuild for dev speed, Rollup for optimized prod builds
-- **Vitest**: shares Vite's module graph so there's no dev vs test environment drift
-- **TypeScript**: maximum strictness via `@tsconfig/strictest` — catches bugs at compile time, not runtime
-- **CSS Modules**: styles are scoped per file by default, no global naming conflicts to manage
-- **PostCSS + Autoprefixer**: vendor prefixes handled automatically — write modern CSS, don't think about browser compat
-- **modern-css-reset**: strips inconsistent browser defaults so you start from a clean slate
-- **ESLint**: catches logic flaws TypeScript can't — unhandled promises, missing braces, that kind of thing
-- **Prettier**: nobody debates formatting, it just gets formatted
-- **Stylelint**: same idea as ESLint but for CSS — ordering, invalid values, typos
-- **Husky + lint-staged + commitlint**: auto-fixes staged files on commit, enforces Conventional Commits, runs full pipeline pre-push so CI doesn't surprise you
+- **Vite**: fast dev server, native ESM, fast builds
+- **Vitest**: shares Vite's module graph, no env drift
+- **TypeScript**: `@tsconfig/strictest`
+- **CSS Modules**: scoped styles per file
+- **PostCSS + Autoprefixer**: modern CSS, no manual vendor prefixes
+- **modern-css-reset**: clean baseline
+- **ESLint + Prettier + Stylelint**: enforced code and style consistency
+- **Husky + lint-staged + commitlint**: Conventional Commits, auto-fix on commit, full pipeline pre-push
 
 ## CI/CD
 
@@ -39,6 +38,6 @@ GitHub Actions runs on every push and PR to `main`:
 lint -> test -> build
 ```
 
-`pnpm lint:check` is the read-only verify step — no auto-fixing in CI, just fail fast.
+`pnpm lint` is the read-only verify step - no auto-fixing in CI, just fail fast.
 
 Output is a static `dist/` folder, deploy anywhere that serves static files.
