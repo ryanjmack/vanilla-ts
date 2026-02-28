@@ -10,10 +10,9 @@
   },
   "scripts": {
     "build": "vite build",
-    "check": "pnpm run lint && pnpm run typecheck",
     "dev": "rm -f vite.log && vite 2>&1 | tee vite.log",
-    "lint": "eslint --flag unstable_native_nodejs_ts_config --fix . && stylelint --fix \"src/**/*.css\" && prettier --write .",
-    "lint:check": "tsc --noEmit && eslint --flag unstable_native_nodejs_ts_config --cache . && stylelint \"src/**/*.css\" && prettier --check .",
+    "fix": "eslint --flag unstable_native_nodejs_ts_config --fix . && stylelint --fix \"src/**/*.css\" && prettier --write . && tsc --noEmit",
+    "lint": "tsc --noEmit && eslint --flag unstable_native_nodejs_ts_config --cache . && stylelint \"src/**/*.css\" && prettier --check .",
     "prepare": "husky",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
