@@ -25,7 +25,7 @@ Node and pnpm versions are pinned. I recommend [fnm](https://github.com/Schniz/f
 - **Vite**: fast dev server, native ESM, fast builds
 - **Vitest**: shares Vite's module graph, no env drift
 - **CSS Modules**: scoped styles per file
-- **PostCSS + Autoprefixer**: modern CSS, no manual vendor prefixes
+- **LightningCSS**: native Vite CSS transformer, automatic vendor prefixes, CSS nesting
 - **modern-css-reset**: clean baseline
 - **ESLint + Prettier + Stylelint**: enforced code and style consistency
 - **Husky + lint-staged + commitlint**: clean commits, enforced conventions, no CI surprises

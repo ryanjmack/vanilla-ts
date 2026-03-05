@@ -1,3 +1,6 @@
+/*
+ * TODO: Update COPYRIGHT in eslint.config.ts, then run `pnpm fix`.
+ */
 import {describe, expect, it} from 'vitest';
 import {formatTime} from './formatTime.ts';
 

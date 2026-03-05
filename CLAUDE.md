@@ -17,7 +17,6 @@ Edit files in the working area only. Do not run `git add`, `git commit`, or touc
 
 - Conventions are enforced by the toolchain. TypeScript, ESLint, Stylelint, Prettier, and commitlint are configured strictly.
 - Config files are authoritative.
-- Use CSS Modules for component styles.
 
 ## Scripts
 
@@ -30,6 +29,7 @@ pnpm prettier       # prettier --write
 pnpm prettier:check # prettier --check
 pnpm preview        # serve production build locally
 pnpm test           # vitest run
+pnpm test:coverage  # vitest run --coverage
 pnpm test:watch     # vitest watch mode
 pnpm typecheck      # tsc --noEmit only
 ```
@@ -46,3 +46,9 @@ pnpm typecheck      # tsc --noEmit only
 ## CI/CD
 
 - lint-staged runs on staged files pre-commit, full pipeline runs pre-push.
+
+## CSS
+
+`modern-css-reset` (Andy Bell's reset) is active. Do not redefine what it already handles.
+
+Use CSS Modules for component styles.

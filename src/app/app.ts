@@ -1,3 +1,6 @@
+/*
+ * TODO: Update COPYRIGHT in eslint.config.ts, then run `pnpm fix`.
+ */
 import '../styles/globals.css';
 import styles from './app.module.css';
 import {formatTime} from '../utils/formatTime.ts';

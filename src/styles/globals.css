@@ -1,14 +1,18 @@
+/*
+ * TODO: Update COPYRIGHT_TEXT in stylelint.config.ts, then run `pnpm fix`.
+ */
+
 @import 'modern-css-reset';
+@import './theme.css';
 @import './variables.css';
 
 :root {
-  -webkit-font-smoothing: antialiased;
-  color-scheme: dark;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-ui);
   font-size: 14px;
   line-height: 1.5;
-  background-color: var(--color-bg);
   color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -18,14 +22,14 @@ body {
 }
 
 #app {
-  padding: 40px 60px;
+  padding: 2.5rem 3.75rem;
 }
 
 #greeting {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-sm);
 }
 
 #clock {
-  font-size: 12px;
+  font-size: var(--font-size-s);
   opacity: 0.7;
 }

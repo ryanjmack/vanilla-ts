@@ -1,0 +1,25 @@
+/*
+ * TODO: Update COPYRIGHT_TEXT in stylelint.config.ts, then run `pnpm fix`.
+ */
+
+:root {
+  color-scheme: dark;
+
+  --color-bg: #1a1a1a;
+  --color-bg-surface: #242424;
+  --color-text: #e8e8e8;
+  --color-text-muted: #a0a0a0;
+  --color-border: #333;
+  --color-accent: #4a9eff;
+
+  @media (prefers-color-scheme: light) {
+    color-scheme: light;
+
+    --color-bg: #fff;
+    --color-bg-surface: #f5f5f5;
+    --color-text: #1a1a1a;
+    --color-text-muted: #666;
+    --color-border: #e0e0e0;
+    --color-accent: #2563eb;
+  }
+}

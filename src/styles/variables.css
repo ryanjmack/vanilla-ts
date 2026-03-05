@@ -1,4 +1,23 @@
+/*
+ * TODO: Update COPYRIGHT_TEXT in stylelint.config.ts, then run `pnpm fix`.
+ */
+
 :root {
-  --color-bg: #1a1b26;
-  --color-text: #66d37f;
+  /* font families */
+  --font-ui: system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  /* spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* font sizes — xs/s/m/l/xl */
+  --font-size-xs: 0.75rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.25rem;
+  --font-size-xl: 1.5rem;
 }

@@ -1,3 +1,6 @@
+/*
+ * TODO: Update COPYRIGHT in eslint.config.ts, then run `pnpm fix`.
+ */
 import type {UserConfig} from '@commitlint/types';
 
 const config: UserConfig = {

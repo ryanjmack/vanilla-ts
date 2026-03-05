@@ -1,3 +1,6 @@
+/*
+ * TODO: Update COPYRIGHT in eslint.config.ts, then run `pnpm fix`.
+ */
 export function formatTime(date: Date): string {
   const parts = new Intl.DateTimeFormat('en-US', {
     hour: '2-digit',
