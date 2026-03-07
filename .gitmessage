@@ -16,6 +16,7 @@
 #    chore:    Maintenance, tooling, and deps
 #    refactor: Cleanup (no behavior change)
 #    docs:     Documentation only
+#    test:     Tests only
 #
 #    Append ! for breaking changes
 # ----------------------------------------------------------------------

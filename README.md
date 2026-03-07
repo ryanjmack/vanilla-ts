@@ -2,6 +2,14 @@
 
 opinionated vanilla typescript project shell
 
+## Setup
+
+After cloning, wire up the commit message template:
+
+```
+git config commit.template .gitmessage
+```
+
 ## Usage
 
 ```
